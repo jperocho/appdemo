@@ -1,0 +1,33 @@
+{
+  "name": "belectron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "electron-builder . -m",
+    "build-win": "electron-builder . -w",
+    "build-all": "electron-builder . -mw"
+  },
+  "build": {
+    "appId": "com.perocho.testapp",
+    "directories": {
+      "buildResources": "."
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win": {
+      "certificateFile": "private/appcert_self_signed_win.p12",
+      "verifyUpdateCodeSignature": false,
+      "target": "nsis"
+    }
+  },
+  "author": "John Mark Perocho <per.eight@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.8.2",
+    "electron-builder": "^20.2.0"
+  }
+}
